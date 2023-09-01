@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		4BD1B22F2AA25121003432B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B22E2AA25121003432B3 /* AppDelegate.swift */; };
 		4BD1B2312AA25121003432B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2302AA25121003432B3 /* SceneDelegate.swift */; };
-		4BD1B2332AA25121003432B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2322AA25121003432B3 /* ViewController.swift */; };
 		4BD1B2362AA25121003432B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1B2342AA25121003432B3 /* Main.storyboard */; };
 		4BD1B2382AA25122003432B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1B2372AA25122003432B3 /* Assets.xcassets */; };
 		4BD1B23B2AA25122003432B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1B2392AA25122003432B3 /* LaunchScreen.storyboard */; };
 		4BD1B2462AA25122003432B3 /* htv_cat_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2452AA25122003432B3 /* htv_cat_iosTests.swift */; };
 		4BD1B2502AA25122003432B3 /* htv_cat_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B24F2AA25122003432B3 /* htv_cat_iosUITests.swift */; };
 		4BD1B2522AA25122003432B3 /* htv_cat_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2512AA25122003432B3 /* htv_cat_iosUITestsLaunchTests.swift */; };
+		4BD1B2622AA254A9003432B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2612AA254A9003432B3 /* HomeViewController.swift */; };
+		4BD1B2652AA25585003432B3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2642AA25585003432B3 /* Coordinator.swift */; };
+		4BD1B2672AA25598003432B3 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2662AA25598003432B3 /* MainCoordinator.swift */; };
+		4BD1B26E2AA258B6003432B3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B26D2AA258B6003432B3 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,6 @@
 		4BD1B22B2AA25121003432B3 /* htv-cat-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "htv-cat-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD1B22E2AA25121003432B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BD1B2302AA25121003432B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4BD1B2322AA25121003432B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4BD1B2352AA25121003432B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BD1B2372AA25122003432B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BD1B23A2AA25122003432B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		4BD1B24B2AA25122003432B3 /* htv-cat-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "htv-cat-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD1B24F2AA25122003432B3 /* htv_cat_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = htv_cat_iosUITests.swift; sourceTree = "<group>"; };
 		4BD1B2512AA25122003432B3 /* htv_cat_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = htv_cat_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4BD1B2612AA254A9003432B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4BD1B2642AA25585003432B3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4BD1B2662AA25598003432B3 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		4BD1B26D2AA258B6003432B3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,11 @@
 		4BD1B22D2AA25121003432B3 /* htv-cat-ios */ = {
 			isa = PBXGroup;
 			children = (
-				4BD1B22E2AA25121003432B3 /* AppDelegate.swift */,
-				4BD1B2302AA25121003432B3 /* SceneDelegate.swift */,
-				4BD1B2322AA25121003432B3 /* ViewController.swift */,
-				4BD1B2342AA25121003432B3 /* Main.storyboard */,
-				4BD1B2372AA25122003432B3 /* Assets.xcassets */,
-				4BD1B2392AA25122003432B3 /* LaunchScreen.storyboard */,
-				4BD1B23C2AA25122003432B3 /* Info.plist */,
+				4BD1B2632AA25574003432B3 /* Common */,
+				4BD1B26B2AA258A6003432B3 /* Features */,
+				4BD1B25F2AA25438003432B3 /* Storyboards */,
+				4BD1B2602AA2544E003432B3 /* Resources */,
+				4BD1B25E2AA25404003432B3 /* SupportingFiles */,
 			);
 			path = "htv-cat-ios";
 			sourceTree = "<group>";
@@ -125,6 +129,59 @@
 				4BD1B2512AA25122003432B3 /* htv_cat_iosUITestsLaunchTests.swift */,
 			);
 			path = "htv-cat-iosUITests";
+			sourceTree = "<group>";
+		};
+		4BD1B25E2AA25404003432B3 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4BD1B22E2AA25121003432B3 /* AppDelegate.swift */,
+				4BD1B2302AA25121003432B3 /* SceneDelegate.swift */,
+				4BD1B23C2AA25122003432B3 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		4BD1B25F2AA25438003432B3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4BD1B2342AA25121003432B3 /* Main.storyboard */,
+				4BD1B2392AA25122003432B3 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4BD1B2602AA2544E003432B3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4BD1B2372AA25122003432B3 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4BD1B2632AA25574003432B3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4BD1B2642AA25585003432B3 /* Coordinator.swift */,
+				4BD1B2662AA25598003432B3 /* MainCoordinator.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4BD1B26B2AA258A6003432B3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				4BD1B26C2AA258AC003432B3 /* Home */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		4BD1B26C2AA258AC003432B3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4BD1B2612AA254A9003432B3 /* HomeViewController.swift */,
+				4BD1B26D2AA258B6003432B3 /* HomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +315,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD1B2332AA25121003432B3 /* ViewController.swift in Sources */,
+				4BD1B2672AA25598003432B3 /* MainCoordinator.swift in Sources */,
+				4BD1B26E2AA258B6003432B3 /* HomeViewModel.swift in Sources */,
 				4BD1B22F2AA25121003432B3 /* AppDelegate.swift in Sources */,
+				4BD1B2652AA25585003432B3 /* Coordinator.swift in Sources */,
 				4BD1B2312AA25121003432B3 /* SceneDelegate.swift in Sources */,
+				4BD1B2622AA254A9003432B3 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,12 +499,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W8W67XPP2J;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "htv-cat-ios/Info.plist";
+				INFOPLIST_FILE = "htv-cat-ios/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "HTV Cats";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -473,12 +532,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W8W67XPP2J;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "htv-cat-ios/Info.plist";
+				INFOPLIST_FILE = "htv-cat-ios/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "HTV Cats";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
