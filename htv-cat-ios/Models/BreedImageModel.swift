@@ -10,7 +10,6 @@ import Foundation
 struct BreedImageModel: Decodable {
     let id: String
     let url: URL
-    let breeds: [BreedModel]
     let width: Double
     let height: Double
 }

@@ -6,11 +6,71 @@
 //
 
 import Foundation
+import Combine
 
 final class DetailViewModel {
-    private(set) var breed: BreedModel
     
-    init(breed: BreedModel) {
+    // MARK: - Private properties
+    
+    private let repository: IBreedRepository
+    private var cancellables = Set<AnyCancellable>()
+    private(set) var breed: BreedModel
+    @Published private(set) var state: ViewState = .idle
+    @Published private(set) var sections: [ListSection] = []
+    
+    private(set) var backSubject = PassthroughSubject<Void, Never>()
+    
+    // MARK: - Constructor
+    
+    init(breed: BreedModel, repository: IBreedRepository = BreedRepository()) {
         self.breed = breed
+        self.repository = repository
+        
+        sections = [
+            DetailHeaderSection(breedImage: nil, delegate: self),
+            DetailBodySection(breed: breed)
+        ]
+    }
+    
+    // MARK: - Public methods
+    
+    func getDetails() {
+        state = .loading
+        
+        repository.fetchBreedImages(breedId: breed.id)
+            .delay(for: 2, scheduler: DispatchQueue.main) // TODO: Remove delay
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    let retry: ErrorRetryFunction = { [weak self] in
+                        self?.getDetails()
+                    }
+                    
+                    self?.state = .error(error, retry)
+                default:
+                    break
+                }
+            } receiveValue: { [weak self] images in
+                self?.handleResponse(images)
+            }
+            .store(in: &cancellables)
+    }
+    
+    // MARK: - Private methods
+    
+    private func handleResponse(_ images: [BreedImageModel]) {
+        sections = [
+//            DetailHeaderSection(breedImage: images.randomElement(), delegate: self),
+            DetailHeaderSection(breedImage: images.first, delegate: self),
+            DetailBodySection(breed: breed)
+        ]
+        state = .loaded
+    }
+}
+
+extension DetailViewModel: DetailHeaderImageCellDelegate {
+    func back() {
+        backSubject.send(())
     }
 }

@@ -19,9 +19,6 @@ class HomeViewController: UIViewController, BaseView {
     
     // MARK: - UI elements
     
-    private let loadingOverlayView = UIView()
-    private let loadingContainerView = UIView()
-    private let activityView = UIActivityIndicatorView(style: .large)
     private var collectionView: UICollectionView!
     
     // MARK: - Constructor
@@ -64,16 +61,12 @@ class HomeViewController: UIViewController, BaseView {
         view.backgroundColor = .white
         navigationItem.title = "Cat Breeds"
         
-        loadingContainerView.backgroundColor = .red
-        loadingContainerView.layer.cornerRadius = 6
-        
         adapter.delegate = self
 
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.delegate = adapter
         collectionView.dataSource = adapter
         collectionView.register(BreedCell.self, forCellWithReuseIdentifier: BreedCell.cellIdentifier)
-        collectionView.register(InfinityLoadingCell.self, forCellWithReuseIdentifier: InfinityLoadingCell.cellIdentifier)
         
         view.addSubview(collectionView)
         
@@ -108,10 +101,6 @@ class HomeViewController: UIViewController, BaseView {
         default:
             break
         }
-    }
-    
-    @objc private func pullToRefreshAction() {
-        viewModel.getCatBreeds()
     }
 }
 

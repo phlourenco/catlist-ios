@@ -16,6 +16,7 @@ final class BreedCoordinator: Coordinator, BreedCoordinatorDelegate {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        navigationController.interactivePopGestureRecognizer?.delegate = nil
     }
     
     func start() {
