@@ -38,7 +38,7 @@ final class DetailViewModel {
         state = .loading
         
         repository.fetchBreedImages(breedId: breed.id)
-            .delay(for: 2, scheduler: DispatchQueue.main) // TODO: Remove delay
+//            .delay(for: 2, scheduler: DispatchQueue.main) // TODO: Remove delay
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 switch completion {

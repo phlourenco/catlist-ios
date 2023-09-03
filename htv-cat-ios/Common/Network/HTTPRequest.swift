@@ -26,8 +26,7 @@ extension HTTPRequest {
     }
     
     func asURLRequest() throws -> URLRequest {
-        // TODO: Get base url from env?
-        guard let baseUrl = URL(string: "https://api.thecatapi.com/v1") else {
+        guard let baseUrl = URL(string: Environment.apiUrl) else {
             throw HTTPError.invalidUrl
         }
         let urlWithPath = baseUrl.appendingPathComponent(path)
@@ -42,8 +41,7 @@ extension HTTPRequest {
         var urlRequest = URLRequest(url: fullUrl)
         urlRequest.httpMethod = method.rawValue
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        // TODO: Get api key from env
-        urlRequest.setValue("live_iEYtZlHJk3r1yzUXdbaNPOz01KwjGO7TNeTNkZjpFUKRfYrG33Mc22B6HuS1Ocft", forHTTPHeaderField: "x-api-key")
+        urlRequest.setValue(Environment.apiKey, forHTTPHeaderField: "x-api-key")
         
         if let headers {
             for header in headers {

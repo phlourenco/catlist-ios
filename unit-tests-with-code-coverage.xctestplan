@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "E305442B-E92E-4E7E-9104-F8BD52B104B5",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:htv-cat-ios.xcodeproj",
+          "identifier" : "4BD1B22A2AA25121003432B3",
+          "name" : "htv-cat-ios"
+        }
+      ]
+    },
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:htv-cat-ios.xcodeproj",
+        "identifier" : "4BD1B2402AA25122003432B3",
+        "name" : "htv-cat-iosTests"
+      }
+    }
+  ],
+  "version" : 1
+}

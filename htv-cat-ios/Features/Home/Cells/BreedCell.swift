@@ -41,7 +41,7 @@ class BreedCell: UICollectionViewCell {
         
         let bgView = UIView()
         bgView.layer.cornerRadius = 5
-        bgView.backgroundColor = UIColor(named: "PrimaryColor")
+        bgView.backgroundColor = UIColor(named: "VeryLightGray")
         
         let vStack = UIStackView(arrangedSubviews: [titleLabel, descriptionLabel])
         vStack.axis = .vertical
@@ -73,11 +73,8 @@ class BreedCell: UICollectionViewCell {
 extension BreedCell: ConfigurableCell {
     func configure(viewModel: CellViewModel, delegate: Any?) {
         guard let viewModel = viewModel as? BreedCellViewModel else { return }
-        
-        let breed = viewModel.breed
-        
-        let countryEmoji = breed.countryCode.toCountryFlagEmoji() ?? ""
-        titleLabel.text = breed.name.appending(" \(countryEmoji)")
-        descriptionLabel.text = breed.description
+                
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.description
     }
 }

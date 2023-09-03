@@ -61,10 +61,10 @@ final class DetailHorizontalCell: UICollectionViewCell {
         ])
     }
     
-    private func makeDetailView(value: String, description: String, color: UIColor? = UIColor(named: "PrimaryColor")) -> UIView {
+    private func makeDetailView(value: String, description: String) -> UIView {
         let view = UIView()
         
-        view.backgroundColor = color
+        view.backgroundColor = UIColor(named: "VeryLightGray")
         view.layer.cornerRadius = 8
         
         UIView.addConstraints([

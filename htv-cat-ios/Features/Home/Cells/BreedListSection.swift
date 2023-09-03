@@ -29,6 +29,8 @@ final class BreedListSection: ListSection {
     }
     
     func getViewModel(forRow row: Int) -> CellViewModel? {
-        BreedCellViewModel(breed: breeds[row])
+        guard row <= breeds.count-1 else { return nil }
+        
+        return BreedCellViewModel(breed: breeds[row])
     }
 }

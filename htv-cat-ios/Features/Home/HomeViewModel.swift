@@ -7,16 +7,14 @@
 
 import Foundation
 import Combine
-
-enum HomeViewCustomState: CustomViewState {
-    case errorNextPage
-}
+import CombineSchedulers
 
 final class HomeViewModel {
     
     // MARK: - Private properties
     
     private let repository: IBreedRepository
+    private let scheduler: AnySchedulerOf<DispatchQueue>
     private var cancellables = Set<AnyCancellable>()
     private var lastFetchedPage: Int?
     private let pageLimit = 10
@@ -26,8 +24,12 @@ final class HomeViewModel {
 
     // MARK: - Constructor
     
-    init(repository: IBreedRepository = BreedRepository()) {
+    init(
+        repository: IBreedRepository = BreedRepository(),
+        scheduler: AnySchedulerOf<DispatchQueue> = .main
+    ) {
         self.repository = repository
+        self.scheduler = scheduler
     }
     
     // MARK: - Public methods
@@ -43,8 +45,7 @@ final class HomeViewModel {
         
         state = .loading
         repository.fetchBreeds(page: pageToFetch, limit: pageLimit)
-            .delay(for: 2, scheduler: DispatchQueue.main) // TODO: Remove delay
-            .receive(on: DispatchQueue.main)
+            .receive(on: scheduler)
             .sink { [weak self] completion in
                 switch completion {
                 case .failure(let error):
