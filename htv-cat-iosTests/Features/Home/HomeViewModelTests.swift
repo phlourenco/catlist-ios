@@ -10,8 +10,6 @@ import Combine
 @testable import htv_cat_ios
 
 final class HomeViewModelTests: XCTestCase {
-    private var cancellables = Set<AnyCancellable>()
-    
     func testSuccesFirstPage() throws {
         // Given
         let mockRepository = BreedRepositoryMock()

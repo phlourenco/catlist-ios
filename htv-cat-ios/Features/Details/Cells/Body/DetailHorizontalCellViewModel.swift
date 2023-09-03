@@ -25,6 +25,5 @@ final class DetailHorizontalCellViewModel: CellViewModel {
         details.append(.init(title: "social needs", value: "\(breed.socialNeeds)"))
         details.append(.init(title: "stranger friendly", value: "\(breed.strangerFriendly)"))
         details.append(.init(title: "rare", value: "\(breed.rare)"))
-        details.shuffle()
     }
 }

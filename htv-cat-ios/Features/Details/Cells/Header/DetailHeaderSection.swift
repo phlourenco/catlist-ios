@@ -12,7 +12,7 @@ final class DetailHeaderSection: ListSection {
     weak var delegate: DetailHeaderImageCellDelegate?
     private let cellViewModel: DetailHeaderImageCellViewModel
     
-    init(breedImage: BreedImageModel?, delegate: DetailHeaderImageCellDelegate) {
+    init(breedImage: BreedImageModel?, delegate: DetailHeaderImageCellDelegate?) {
         self.delegate = delegate
         self.cellViewModel = DetailHeaderImageCellViewModel(breedImage: breedImage)
     }

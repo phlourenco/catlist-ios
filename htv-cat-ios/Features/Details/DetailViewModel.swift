@@ -7,12 +7,14 @@
 
 import Foundation
 import Combine
+import CombineSchedulers
 
 final class DetailViewModel {
     
     // MARK: - Private properties
     
     private let repository: IBreedRepository
+    private let scheduler: AnySchedulerOf<DispatchQueue>
     private var cancellables = Set<AnyCancellable>()
     private(set) var breed: BreedModel
     @Published private(set) var state: ViewState = .idle
@@ -22,9 +24,14 @@ final class DetailViewModel {
     
     // MARK: - Constructor
     
-    init(breed: BreedModel, repository: IBreedRepository = BreedRepository()) {
+    init(
+        breed: BreedModel,
+        repository: IBreedRepository = BreedRepository(),
+        scheduler: AnySchedulerOf<DispatchQueue> = .main
+    ) {
         self.breed = breed
         self.repository = repository
+        self.scheduler = scheduler
         
         sections = [
             DetailHeaderSection(breedImage: nil, delegate: self),
@@ -38,8 +45,7 @@ final class DetailViewModel {
         state = .loading
         
         repository.fetchBreedImages(breedId: breed.id)
-//            .delay(for: 2, scheduler: DispatchQueue.main) // TODO: Remove delay
-            .receive(on: DispatchQueue.main)
+            .receive(on: scheduler)
             .sink { [weak self] completion in
                 switch completion {
                 case .failure(let error):

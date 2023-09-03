@@ -37,13 +37,6 @@ final class DetailViewController: UIViewController, BaseView {
         super.viewDidLoad()
         setupViews()
         bindViewModel()
-        
-//        adapter.sections = [
-//            DetailHeaderSection(delegate: self),
-//            DetailBodySection()
-//        ]
-//        collectionView.reloadData()
-        
         viewModel.getDetails()
     }
     

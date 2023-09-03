@@ -10,7 +10,6 @@ import SnapshotTesting
 @testable import htv_cat_ios
 
 final class HomeViewControllerTests: XCTestCase {
-
     func testLoadedState() {
         let mockRepository = BreedRepositoryMock()
         let viewModel = HomeViewModel(repository: mockRepository, scheduler: .immediate)
@@ -36,5 +35,4 @@ final class HomeViewControllerTests: XCTestCase {
         let vc = HomeViewController(viewModel: viewModel)
         assertSnapshot(of: vc, as: .image)
     }
-
 }

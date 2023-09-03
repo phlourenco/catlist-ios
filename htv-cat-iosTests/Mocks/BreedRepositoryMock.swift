@@ -39,11 +39,8 @@ final class BreedRepositoryMock: IBreedRepository {
         
         let jsonData = MockHelper.shared.loadJson(name: "image_search_endpoint_success")!
         
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        
         return Just(jsonData)
-            .decode(type: [BreedImageModel].self, decoder: decoder)
+            .decode(type: [BreedImageModel].self, decoder: SnakeCaseJSONDecoder())
             .eraseToAnyPublisher()
     }
 }
