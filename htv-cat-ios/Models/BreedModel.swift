@@ -12,8 +12,16 @@ struct BreedModel: Decodable {
     let name: String
     let temperament: String
     let origin: String
-    let countryCodes: String
     let countryCode: String
     let description: String
-//    let referenceImageId: String
+    let lifeSpan: String
+    let adaptability: Int
+    let affectionLevel: Int
+    let childFriendly: Int
+    let energyLevel: Int
+    let healthIssues: Int
+    let intelligence: Int
+    let socialNeeds: Int
+    let strangerFriendly: Int
+    let rare: Int
 }

@@ -85,8 +85,6 @@ class HomeViewController: UIViewController, BaseView {
     }
     
     private func handleState(_ state: ViewState) {
-        print("new state: \(state)")
-        
         adapter.sections = viewModel.sections
         collectionView.reloadData()
         
@@ -106,13 +104,11 @@ class HomeViewController: UIViewController, BaseView {
 
 extension HomeViewController: CollectionViewAdapterDelegate {
     func didSelectRowAt(indexPath: IndexPath) {
-        print("didSelectRowAt \(indexPath)")
         let breed = viewModel.breeds[indexPath.row]
         delegate?.showDetail(breed: breed)
     }
     
     func willDisplayLastCell() {
-        print("willDisplayLastCell")
         viewModel.getCatBreeds(nextPage: true)
     }
 }

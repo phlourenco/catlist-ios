@@ -60,11 +60,8 @@ final class DetailViewModel {
     // MARK: - Private methods
     
     private func handleResponse(_ images: [BreedImageModel]) {
-        sections = [
-//            DetailHeaderSection(breedImage: images.randomElement(), delegate: self),
-            DetailHeaderSection(breedImage: images.first, delegate: self),
-            DetailBodySection(breed: breed)
-        ]
+        sections.removeAll(where: { $0 is DetailHeaderSection })
+        sections.insert(DetailHeaderSection(breedImage: images.first, delegate: self), at: 0)
         state = .loaded
     }
 }

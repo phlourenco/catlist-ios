@@ -60,15 +60,21 @@ final class DetailViewController: UIViewController, BaseView {
     // MARK: - Private methods
     
     private func createLayout() -> UICollectionViewLayout {
-        let estimatedHeight: CGFloat = 300
-        let layoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(estimatedHeight))
-        let item = NSCollectionLayoutItem(layoutSize: layoutSize)
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitem: item, count: 1)
-        let section = NSCollectionLayoutSection(group: group)
-//        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-//        section.interGroupSpacing = 10
+        let layout = UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
+            guard let self else { return nil }
+            let section = viewModel.sections[sectionIndex]
+
+            let estimatedHeight = section.getEstimatedHeight()
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(estimatedHeight))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(estimatedHeight))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+            let sectionLayout = NSCollectionLayoutSection(group: group)
+            sectionLayout.interGroupSpacing = 16
+
+            return sectionLayout
+        }
         
-        let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
     
@@ -81,6 +87,7 @@ final class DetailViewController: UIViewController, BaseView {
         collectionView.dataSource = adapter
         collectionView.register(TextCell.self, forCellWithReuseIdentifier: TextCell.cellIdentifier)
         collectionView.register(DetailHeaderImageCell.self, forCellWithReuseIdentifier: DetailHeaderImageCell.cellIdentifier)
+        collectionView.register(DetailHorizontalCell.self, forCellWithReuseIdentifier: DetailHorizontalCell.cellIdentifier)
         
         view.addSubview(collectionView)
         
@@ -105,14 +112,9 @@ final class DetailViewController: UIViewController, BaseView {
     }
     
     private func handleState(_ state: ViewState) {
-        print("DETAIL new state: \(state)")
-        
-        
         adapter.sections = viewModel.sections
         collectionView.reloadData()
         switch state {
-//        case .loaded:
-//            break
         case .error(_, let retry):
             showAlert(title: "Oops!", message: "Something went wrong. Please check your connection and try again.", tryAgainAction: retry, completion: nil)
             break

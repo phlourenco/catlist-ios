@@ -32,9 +32,7 @@ class TextCell: UICollectionViewCell {
     // MARK: - Private methods
     
     private func setupUI() {
-        titleLabel.text = "Loading..."
         titleLabel.numberOfLines = 0
-        titleLabel.textColor = .darkGray
         contentView.addSubview(titleLabel)
     }
     
@@ -42,8 +40,8 @@ class TextCell: UICollectionViewCell {
         UIView.addConstraints([
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
+            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0)
         ])
     }
 }
@@ -54,5 +52,11 @@ extension TextCell: ConfigurableCell {
         
         titleLabel.text = viewModel.text
         titleLabel.font = UIFont.systemFont(ofSize: CGFloat(viewModel.fontSize))
+        switch viewModel.type {
+        case .title:
+            titleLabel.textColor = .darkGray
+        case .description:
+            titleLabel.textColor = .gray
+        }
     }
 }

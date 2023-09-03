@@ -32,4 +32,8 @@ final class DetailHeaderSection: ListSection {
     func getDelegate(forRow row: Int) -> Any? {
         delegate
     }
+    
+    func getEstimatedHeight() -> CGFloat {
+        300
+    }
 }

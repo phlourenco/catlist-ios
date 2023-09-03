@@ -5,9 +5,10 @@
 //  Created by Paulo Lourenço on 2/9/23.
 //
 
-import UIKit
+import Foundation
 
 protocol ListSection {
+    func getEstimatedHeight() -> CGFloat
     func getNumberOfRows() -> Int
     func getCellIdentifier(forRow row: Int) -> String
     func getViewModel(forRow row: Int) -> CellViewModel?
@@ -16,6 +17,10 @@ protocol ListSection {
 
 extension ListSection {
     func getDelegate(forRow row: Int) -> Any? {
-        return nil
+        nil
+    }
+    
+    func getEstimatedHeight() -> CGFloat {
+        100
     }
 }

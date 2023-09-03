@@ -48,6 +48,9 @@
 		4BD1B2AE2AA3979E003432B3 /* ImageSearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2AD2AA3979E003432B3 /* ImageSearchEndpoint.swift */; };
 		4BD1B2B22AA3B8D6003432B3 /* TextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2B12AA3B8D6003432B3 /* TextCellViewModel.swift */; };
 		4BD1B2B52AA3BC83003432B3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4BD1B2B42AA3BC83003432B3 /* Kingfisher */; };
+		4BD1B2B92AA3C8AE003432B3 /* DetailHorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2B82AA3C8AE003432B3 /* DetailHorizontalCell.swift */; };
+		4BD1B2BB2AA3D964003432B3 /* DetailHorizontalCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2BA2AA3D964003432B3 /* DetailHorizontalCellViewModel.swift */; };
+		4BD1B2BF2AA47848003432B3 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2BE2AA47848003432B3 /* UIStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +115,9 @@
 		4BD1B2AB2AA3935B003432B3 /* DetailHeaderImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderImageCellViewModel.swift; sourceTree = "<group>"; };
 		4BD1B2AD2AA3979E003432B3 /* ImageSearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchEndpoint.swift; sourceTree = "<group>"; };
 		4BD1B2B12AA3B8D6003432B3 /* TextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCellViewModel.swift; sourceTree = "<group>"; };
+		4BD1B2B82AA3C8AE003432B3 /* DetailHorizontalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHorizontalCell.swift; sourceTree = "<group>"; };
+		4BD1B2BA2AA3D964003432B3 /* DetailHorizontalCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHorizontalCellViewModel.swift; sourceTree = "<group>"; };
+		4BD1B2BE2AA47848003432B3 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +280,7 @@
 			children = (
 				4BD1B2812AA282FE003432B3 /* UIView.swift */,
 				4BD1B2A22AA37613003432B3 /* String.swift */,
+				4BD1B2BE2AA47848003432B3 /* UIStackView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -370,6 +377,8 @@
 			isa = PBXGroup;
 			children = (
 				4BD1B2952AA31FF8003432B3 /* DetailBodySection.swift */,
+				4BD1B2B82AA3C8AE003432B3 /* DetailHorizontalCell.swift */,
+				4BD1B2BA2AA3D964003432B3 /* DetailHorizontalCellViewModel.swift */,
 			);
 			path = Body;
 			sourceTree = "<group>";
@@ -514,6 +523,7 @@
 				4BD1B2672AA25598003432B3 /* MainCoordinator.swift in Sources */,
 				4BD1B26E2AA258B6003432B3 /* HomeViewModel.swift in Sources */,
 				4BD1B27C2AA27349003432B3 /* ViewState.swift in Sources */,
+				4BD1B2B92AA3C8AE003432B3 /* DetailHorizontalCell.swift in Sources */,
 				4BD1B2842AA28812003432B3 /* BreedCell.swift in Sources */,
 				4BD1B22F2AA25121003432B3 /* AppDelegate.swift in Sources */,
 				4BD1B2652AA25585003432B3 /* Coordinator.swift in Sources */,
@@ -529,6 +539,7 @@
 				4BD1B29D2AA32AF3003432B3 /* DetailViewModel.swift in Sources */,
 				4BD1B28E2AA309D8003432B3 /* ListSection.swift in Sources */,
 				4BD1B2AC2AA3935B003432B3 /* DetailHeaderImageCellViewModel.swift in Sources */,
+				4BD1B2BB2AA3D964003432B3 /* DetailHorizontalCellViewModel.swift in Sources */,
 				4BD1B28C2AA30976003432B3 /* CollectionViewAdapter.swift in Sources */,
 				4BD1B29B2AA32ADC003432B3 /* DetailViewController.swift in Sources */,
 				4BD1B2A32AA37613003432B3 /* String.swift in Sources */,
@@ -545,6 +556,7 @@
 				4BD1B27F2AA2749B003432B3 /* BreedRepository.swift in Sources */,
 				4BD1B2902AA30D46003432B3 /* BreedListSection.swift in Sources */,
 				4BD1B27A2AA26549003432B3 /* BreedListEndpoint.swift in Sources */,
+				4BD1B2BF2AA47848003432B3 /* UIStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
