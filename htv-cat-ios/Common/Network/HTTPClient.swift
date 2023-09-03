@@ -26,10 +26,16 @@ enum HTTPMethod: String {
 }
 
 class HTTPClient: IHTTPClient {
+    let urlSession: URLSession
+    
+    init(urlSession: URLSession = URLSession.shared) {
+      self.urlSession = urlSession
+    }
+
     func requestData(request: HTTPRequest) -> AnyPublisher<Data, Error> {
         do {
             let urlRequest = try request.asURLRequest()
-            return URLSession.shared.dataTaskPublisher(for: urlRequest)
+            return urlSession.dataTaskPublisher(for: urlRequest)
                 .subscribe(on: DispatchQueue.global(qos: .default))
                 .tryMap { (data: Data, response: URLResponse) in
                     guard let response = response as? HTTPURLResponse else {
@@ -49,12 +55,9 @@ class HTTPClient: IHTTPClient {
     }
     
     func requestObject<T>(request: HTTPRequest) -> AnyPublisher<T, Error> where T : Decodable {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        
         return requestData(request: request)
             .tryMap { data in
-                try decoder.decode(T.self, from: data)
+                try SnakeCaseJSONDecoder().decode(T.self, from: data)
             }
             .mapError { error in
                 return HTTPError.decodingError(error)

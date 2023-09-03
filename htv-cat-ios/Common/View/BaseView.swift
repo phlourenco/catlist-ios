@@ -8,17 +8,12 @@
 import UIKit
 
 protocol BaseView {
-    func showAlert(title: String?, message: String?)
     func showAlert(title: String?, message: String?, tryAgainAction: (()->Void)?, completion: (() -> Void)?)
     func showScreenLoading()
     func hideScreenLoading()
 }
 
 extension BaseView where Self: UIViewController {
-    func showAlert(title: String?, message: String?) {
-        showAlert(title: title, message: message, tryAgainAction: nil, completion: nil)
-    }
-    
     func showAlert(title: String?, message: String?, tryAgainAction: (()->Void)?, completion: (() -> Void)?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if let tryAgainAction = tryAgainAction {

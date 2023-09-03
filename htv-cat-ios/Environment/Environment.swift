@@ -17,25 +17,19 @@ public enum Environment {
     // MARK: - Plist
     
     private static let infoDictionary: [String: Any] = {
-        guard let dict = Bundle.main.infoDictionary else {
-            fatalError("Plist file not found")
-        }
+        guard let dict = Bundle.main.infoDictionary else { fatalError("Plist file not found") }
         return dict
     }()
     
     // MARK: - Plist values
     
     static let apiKey: String = {
-        guard let apiKey = Environment.infoDictionary[Keys.apiKey] as? String else {
-            fatalError("API_KEY not set in plist for this environment")
-        }
+        guard let apiKey = Environment.infoDictionary[Keys.apiKey] as? String else { fatalError("API_KEY not set in plist for this environment") }
         return apiKey
     }()
     
     static let apiUrl: String = {
-        guard let apiUrl = Environment.infoDictionary[Keys.apiUrl] as? String else {
-            fatalError("API_URL not set in plist for this environment")
-        }
+        guard let apiUrl = Environment.infoDictionary[Keys.apiUrl] as? String else { fatalError("API_URL not set in plist for this environment") }
         return "https://\(apiUrl)"
     }()
 }

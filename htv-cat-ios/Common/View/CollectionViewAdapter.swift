@@ -45,7 +45,6 @@ class CollectionViewAdapter: NSObject, UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
         delegate?.didSelectRowAt(indexPath: indexPath)
     }
     

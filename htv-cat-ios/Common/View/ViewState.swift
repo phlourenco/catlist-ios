@@ -8,14 +8,12 @@
 import Foundation
 
 typealias ErrorRetryFunction = () -> Void
-protocol CustomViewState: Hashable { }
 
 enum ViewState: Equatable {
     case idle
     case loading
     case loaded(empty: Bool)
     case error(Error, ErrorRetryFunction?)
-    case custom(any CustomViewState)
     
     static func == (lhs: ViewState, rhs: ViewState) -> Bool {
         switch (lhs, rhs) {
@@ -25,10 +23,8 @@ enum ViewState: Equatable {
             return true
         case (.loaded(let lhsEmpty), .loaded(let rhsEmpty)):
             return lhsEmpty == rhsEmpty
-        case (.error(_, _), .error(_, _)):
-            return true
-        case (.custom(let lhsCustomState), .custom(let rhsCustomState)):
-            return lhsCustomState.hashValue == rhsCustomState.hashValue
+        case (.error(let lhsError, _), .error(let rhsError, _)):
+            return lhsError.localizedDescription == rhsError.localizedDescription
         default:
             return false
         }

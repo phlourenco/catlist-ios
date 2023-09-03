@@ -24,5 +24,6 @@ final class BreedListSectionTests: XCTestCase {
         XCTAssertEqual(sut.getNumberOfRows(), 0)
         XCTAssertNil(sut.getViewModel(forRow: 10))
         XCTAssertNil(sut.getDelegate(forRow: 0))
+        XCTAssertEqual(sut.getEstimatedHeight(), 100)
     }
 }

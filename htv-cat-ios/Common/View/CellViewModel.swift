@@ -7,12 +7,4 @@
 
 import UIKit
 
-protocol CellViewModel {
-    var height: CGFloat { get }
-}
-
-extension CellViewModel {
-    var height: CGFloat {
-        return UITableView.automaticDimension
-    }
-}
+protocol CellViewModel { }
