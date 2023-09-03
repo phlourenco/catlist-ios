@@ -13,7 +13,7 @@ protocol CustomViewState: Hashable { }
 enum ViewState: Equatable {
     case idle
     case loading
-    case loaded
+    case loaded(empty: Bool)
     case error(Error, ErrorRetryFunction?)
     case custom(any CustomViewState)
     
@@ -23,8 +23,8 @@ enum ViewState: Equatable {
             return true
         case (.loading, .loading):
             return true
-        case (.loaded, .loaded):
-            return true
+        case (.loaded(let lhsEmpty), .loaded(let rhsEmpty)):
+            return lhsEmpty == rhsEmpty
         case (.error(_, _), .error(_, _)):
             return true
         case (.custom(let lhsCustomState), .custom(let rhsCustomState)):

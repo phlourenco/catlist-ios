@@ -20,6 +20,7 @@ class HomeViewController: UIViewController, BaseView {
     // MARK: - UI elements
     
     private var collectionView: UICollectionView!
+    private var stateView: StateView!
     
     // MARK: - Constructor
     
@@ -91,14 +92,44 @@ class HomeViewController: UIViewController, BaseView {
         switch state {
         case .loading:
             showScreenLoading()
-        case .loaded:
+        case .loaded(let empty):
+            hideStateView()
+            if empty {
+                showEmptyStateView()
+            }
             hideScreenLoading()
         case .error(_, let retry):
             hideScreenLoading()
+            showErrorView()
             showAlert(title: "Oops!", message: "Something went wrong. Please check your connection and try again.", tryAgainAction: retry, completion: nil)
         default:
             break
         }
+    }
+    
+    private func showStateView(image: UIImage?, text: String) {
+        stateView?.removeFromSuperview()
+        collectionView.isHidden = true
+        stateView = StateView.instantiate(image: image, text: text)
+        view.addSubview(stateView)
+        
+        UIView.addConstraints([
+            stateView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stateView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+    
+    private func showEmptyStateView() {
+        showStateView(image: UIImage(systemName: "folder"), text: "Oops! Nothing found. 😕")
+    }
+    
+    private func showErrorView() {
+        showStateView(image: UIImage(systemName: "xmark.circle"), text: "Something went wrong!\nPlease try again later.")
+    }
+    
+    private func hideStateView() {
+        collectionView.isHidden = false
+        stateView?.removeFromSuperview()
     }
 }
 

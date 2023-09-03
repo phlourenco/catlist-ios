@@ -74,6 +74,6 @@ final class HomeViewModel {
             self.breeds.append(contentsOf: breeds)
         }
         sections = [BreedListSection(breeds: self.breeds)]
-        state = .loaded
+        state = .loaded(empty: self.breeds.isEmpty)
     }
 }

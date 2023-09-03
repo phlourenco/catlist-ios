@@ -62,7 +62,7 @@ final class DetailViewModel {
     private func handleResponse(_ images: [BreedImageModel]) {
         sections.removeAll(where: { $0 is DetailHeaderSection })
         sections.insert(DetailHeaderSection(breedImage: images.first, delegate: self), at: 0)
-        state = .loaded
+        state = .loaded(empty: images.isEmpty)
     }
 }
 

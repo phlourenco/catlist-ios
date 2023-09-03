@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B6AFD492AA4D79800A8F694 /* StateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B6AFD482AA4D79800A8F694 /* StateView.xib */; };
+		4B6AFD4B2AA4D8FD00A8F694 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6AFD4A2AA4D8FD00A8F694 /* StateView.swift */; };
 		4BD1B22F2AA25121003432B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B22E2AA25121003432B3 /* AppDelegate.swift */; };
 		4BD1B2312AA25121003432B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2302AA25121003432B3 /* SceneDelegate.swift */; };
 		4BD1B2362AA25121003432B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1B2342AA25121003432B3 /* Main.storyboard */; };
@@ -63,6 +65,8 @@
 		4BDF8D922AA4C559008790FA /* SnakeCaseJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF8D912AA4C559008790FA /* SnakeCaseJSONDecoder.swift */; };
 		4BDF8D972AA4C968008790FA /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF8D962AA4C968008790FA /* Environment.swift */; };
 		4BDF8D992AA4CC52008790FA /* BreedCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF8D982AA4CC52008790FA /* BreedCellViewModelTests.swift */; };
+		4BDF8D9C2AA4D45B008790FA /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 4BDF8D9B2AA4D45B008790FA /* SnapshotTesting */; };
+		4BDF8D9E2AA4D48B008790FA /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF8D9D2AA4D48B008790FA /* HomeViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +87,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B6AFD482AA4D79800A8F694 /* StateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StateView.xib; sourceTree = "<group>"; };
+		4B6AFD4A2AA4D8FD00A8F694 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		4BD1B22B2AA25121003432B3 /* htv-cat-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "htv-cat-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD1B22E2AA25121003432B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BD1B2302AA25121003432B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 		4BDF8D942AA4C86A008790FA /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		4BDF8D962AA4C968008790FA /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		4BDF8D982AA4CC52008790FA /* BreedCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCellViewModelTests.swift; sourceTree = "<group>"; };
+		4BDF8D9D2AA4D48B008790FA /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDF8D9C2AA4D45B008790FA /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +180,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B6AFD472AA4D77C00A8F694 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4B6AFD482AA4D79800A8F694 /* StateView.xib */,
+				4B6AFD4A2AA4D8FD00A8F694 /* StateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		4BD1B2222AA25121003432B3 = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +294,7 @@
 		4BD1B26C2AA258AC003432B3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4B6AFD472AA4D77C00A8F694 /* Views */,
 				4BDF8D932AA4C800008790FA /* Cells */,
 				4BD1B2612AA254A9003432B3 /* HomeViewController.swift */,
 				4BD1B26D2AA258B6003432B3 /* HomeViewModel.swift */,
@@ -426,6 +444,7 @@
 				4BD1B2C22AA4809B003432B3 /* HomeViewModelTests.swift */,
 				4BDF8D8F2AA4C4C1008790FA /* BreedListSectionTests.swift */,
 				4BDF8D982AA4CC52008790FA /* BreedCellViewModelTests.swift */,
+				4BDF8D9D2AA4D48B008790FA /* HomeViewControllerTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -508,6 +527,9 @@
 				4BD1B2432AA25122003432B3 /* PBXTargetDependency */,
 			);
 			name = "htv-cat-iosTests";
+			packageProductDependencies = (
+				4BDF8D9B2AA4D45B008790FA /* SnapshotTesting */,
+			);
 			productName = "htv-cat-iosTests";
 			productReference = 4BD1B2412AA25122003432B3 /* htv-cat-iosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -565,6 +587,7 @@
 			packageReferences = (
 				4BD1B2B32AA3BC83003432B3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				4BD1B2D22AA49900003432B3 /* XCRemoteSwiftPackageReference "combine-schedulers" */,
+				4BDF8D9A2AA4D45B008790FA /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 4BD1B22C2AA25121003432B3 /* Products */;
 			projectDirPath = "";
@@ -583,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BD1B23B2AA25122003432B3 /* LaunchScreen.storyboard in Resources */,
+				4B6AFD492AA4D79800A8F694 /* StateView.xib in Resources */,
 				4BD1B2382AA25122003432B3 /* Assets.xcassets in Resources */,
 				4BD1B2362AA25121003432B3 /* Main.storyboard in Resources */,
 			);
@@ -621,6 +645,7 @@
 				4BD1B2842AA28812003432B3 /* BreedCell.swift in Sources */,
 				4BDF8D922AA4C559008790FA /* SnakeCaseJSONDecoder.swift in Sources */,
 				4BD1B22F2AA25121003432B3 /* AppDelegate.swift in Sources */,
+				4B6AFD4B2AA4D8FD00A8F694 /* StateView.swift in Sources */,
 				4BD1B2652AA25585003432B3 /* Coordinator.swift in Sources */,
 				4BDF8D972AA4C968008790FA /* Environment.swift in Sources */,
 				4BD1B2A12AA34512003432B3 /* BaseView.swift in Sources */,
@@ -661,6 +686,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BDF8D902AA4C4C1008790FA /* BreedListSectionTests.swift in Sources */,
+				4BDF8D9E2AA4D48B008790FA /* HomeViewControllerTests.swift in Sources */,
 				4BDF8D992AA4CC52008790FA /* BreedCellViewModelTests.swift in Sources */,
 				4BD1B2CD2AA48CB7003432B3 /* MockHelper.swift in Sources */,
 				4BD1B2C62AA480CE003432B3 /* BreedRepositoryMock.swift in Sources */,
@@ -1034,6 +1060,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		4BDF8D9A2AA4D45B008790FA /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1046,6 +1080,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4BD1B2D22AA49900003432B3 /* XCRemoteSwiftPackageReference "combine-schedulers" */;
 			productName = CombineSchedulers;
+		};
+		4BDF8D9B2AA4D45B008790FA /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BDF8D9A2AA4D45B008790FA /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

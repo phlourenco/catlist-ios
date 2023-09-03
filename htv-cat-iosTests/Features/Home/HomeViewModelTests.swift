@@ -27,7 +27,9 @@ final class HomeViewModelTests: XCTestCase {
         
         // Then
         XCTAssertEqual(mockRepository.fetchBreedsCount, 1)
-        XCTAssertEqual(sut.state, .loaded)
+        if case ViewState.loaded(_) = sut.state {} else {
+            XCTFail("State should be loaded")
+        }
         XCTAssertEqual(sut.breeds.count, 10)
         XCTAssertEqual(sut.sections.count, 1)
         XCTAssertTrue(sut.sections.first is BreedListSection)
@@ -49,7 +51,9 @@ final class HomeViewModelTests: XCTestCase {
         
         // Then
         XCTAssertEqual(mockRepository.fetchBreedsCount, 2)
-        XCTAssertEqual(sut.state, .loaded)
+        if case ViewState.loaded(_) = sut.state {} else {
+            XCTFail("State should be loaded")
+        }
         XCTAssertEqual(sut.breeds.count, 20)
         XCTAssertEqual(sut.sections.count, 1)
         XCTAssertTrue(sut.sections.first is BreedListSection)
@@ -103,7 +107,9 @@ final class HomeViewModelTests: XCTestCase {
         
         // Then it's not fetched, because by receiving only 9 items from the previous request it means that there are no more pages to fetch
         XCTAssertEqual(mockRepository.fetchBreedsCount, 1)
-        XCTAssertEqual(sut.state, .loaded)
+        if case ViewState.loaded(_) = sut.state {} else {
+            XCTFail("State should be loaded")
+        }
         XCTAssertEqual(sut.breeds.count, 9)
         XCTAssertEqual(sut.sections.count, 1)
         XCTAssertTrue(sut.sections.first is BreedListSection)
