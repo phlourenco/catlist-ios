@@ -29,6 +29,6 @@ The snapshot tests were recorded with iPhone 14 Pro Max simulator. Use it to run
 
 ### Code Coverage
 
-The project has a code coverage of 91.5%.
+The project has a code coverage of 92.4%.
 
 ![](readme_files/code_coverage.png)
