@@ -7,27 +7,31 @@
 
 import UIKit
 
-protocol BreedCoordinatorDelegate: AnyObject {
+protocol BreedCoordinatorDelegate: CoordinatorDelegate {
     func showDetail(breed: BreedModel)
 }
 
-final class BreedCoordinator: Coordinator, BreedCoordinatorDelegate {
-    var navigationController: UINavigationController
+final class BreedCoordinator: IndependantStartableCoordinator, BreedCoordinatorDelegate {
+    var navigationController: UINavigationController!
+    private let homeFactory: ViewControllerFactory
+    private let detailFactory: ViewControllerFactory
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-        navigationController.interactivePopGestureRecognizer?.delegate = nil
+    init(
+        homeFactory: ViewControllerFactory = HomeFactory(),
+        detailFactory: ViewControllerFactory = DetailFactory()
+    ) {
+        self.homeFactory = homeFactory
+        self.detailFactory = detailFactory
     }
     
-    func start() {
-        let homeController = HomeViewController()
-        homeController.delegate = self
+    func start(with navigationController: UINavigationController) {
+        self.navigationController = navigationController
+        let homeController = try! homeFactory.make(parameters: [], coordinatorDelegate: self)
         navigationController.viewControllers = [homeController]
     }
     
     func showDetail(breed: BreedModel) {
-        let viewModel = DetailViewModel(breed: breed)
-        let detailController = DetailViewController(viewModel: viewModel)
+        let detailController = try! detailFactory.make(parameters: [breed], coordinatorDelegate: nil)
         navigationController.pushViewController(detailController, animated: true)
     }
 }

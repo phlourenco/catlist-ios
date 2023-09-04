@@ -12,7 +12,8 @@ typealias ErrorRetryFunction = () -> Void
 enum ViewState: Equatable {
     case idle
     case loading
-    case loaded(empty: Bool)
+    case loaded
+    case empty
     case error(Error, ErrorRetryFunction?)
     
     static func == (lhs: ViewState, rhs: ViewState) -> Bool {
@@ -21,8 +22,10 @@ enum ViewState: Equatable {
             return true
         case (.loading, .loading):
             return true
-        case (.loaded(let lhsEmpty), .loaded(let rhsEmpty)):
-            return lhsEmpty == rhsEmpty
+        case (.loaded, .loaded):
+            return true
+        case (.empty, .empty):
+            return true
         case (.error(let lhsError, _), .error(let rhsError, _)):
             return lhsError.localizedDescription == rhsError.localizedDescription
         default:

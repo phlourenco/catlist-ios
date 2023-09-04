@@ -7,28 +7,30 @@
 
 import UIKit
 
-final class MainCoordinator: Coordinator {
+final class MainCoordinator: StartableCoordinator {
     
     var window: UIWindow?
     
-    static var shared = MainCoordinator()
+    static let shared: MainCoordinator = {
+        MainCoordinator(breedCoordinator: BreedCoordinator())
+    }()
     
-    var navigationController: UINavigationController
-    private var breedCoordinator: BreedCoordinator!
+    var navigationController: UINavigationController!
+    private let breedCoordinator: IndependantStartableCoordinator
     
-    private init() {
+    init(breedCoordinator: IndependantStartableCoordinator) {
+        self.breedCoordinator = breedCoordinator
+
         navigationController = UINavigationController()
         navigationController.view.backgroundColor = .white
         
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
-//        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.purple]
-//        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.purple]
-//        navBarAppearance.backgroundColor = UIColor.yellow
 
         navigationController.navigationBar.standardAppearance = navBarAppearance
         navigationController.navigationBar.compactAppearance = navBarAppearance
         navigationController.navigationBar.scrollEdgeAppearance = navBarAppearance
+        navigationController.interactivePopGestureRecognizer?.delegate = nil
 
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.navigationBar.isTranslucent = true
@@ -43,9 +45,6 @@ final class MainCoordinator: Coordinator {
     }
     
     private func showHome() {
-        breedCoordinator = BreedCoordinator(navigationController: navigationController)
-        breedCoordinator.start()
+        breedCoordinator.start(with: navigationController)
     }
-    
 }
-

@@ -12,7 +12,7 @@ class HomeViewController: UIViewController, BaseView {
     
     // MARK: - Properties
     
-    weak var delegate: BreedCoordinatorDelegate?
+    weak var delegate: CoordinatorDelegate?
     private let viewModel: HomeViewModel
     private var cancellables: Set<AnyCancellable> = []
     private var adapter = CollectionViewAdapter(sections: [])
@@ -92,12 +92,12 @@ class HomeViewController: UIViewController, BaseView {
         switch state {
         case .loading:
             showScreenLoading()
-        case .loaded(let empty):
+        case .loaded:
             hideStateView()
-            if empty {
-                showEmptyStateView()
-            }
             hideScreenLoading()
+        case .empty:
+            hideScreenLoading()
+            showEmptyStateView()
         case .error(_, let retry):
             hideScreenLoading()
             showErrorView()
@@ -136,7 +136,7 @@ class HomeViewController: UIViewController, BaseView {
 extension HomeViewController: CollectionViewAdapterDelegate {
     func didSelectRowAt(indexPath: IndexPath) {
         let breed = viewModel.breeds[indexPath.row]
-        delegate?.showDetail(breed: breed)
+        (delegate as? BreedCoordinatorDelegate)?.showDetail(breed: breed)
     }
     
     func willDisplayLastCell() {

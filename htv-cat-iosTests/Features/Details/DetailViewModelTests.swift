@@ -65,9 +65,7 @@ final class DetailViewModelTests: XCTestCase {
         // Then
         XCTAssertEqual(mockRepository.fetchBreedImagesCount, 1)
         
-        if case ViewState.loaded(_) = sut.state {} else {
-            XCTFail("State should be loaded")
-        }
+        XCTAssertEqual(sut.state, .loaded)
         
         guard let headerSectionWithImage = sut.sections[0].getViewModel(forRow: 0) as? DetailHeaderImageCellViewModel else {
             XCTFail("First section VM should be DetailHeaderImageCellViewModel")

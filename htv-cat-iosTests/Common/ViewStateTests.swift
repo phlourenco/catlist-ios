@@ -23,10 +23,15 @@ class ViewStateTests: XCTestCase {
     }
     
     func testLoadedComparison() {
-        XCTAssertNotEqual(ViewState.loaded(empty: false), ViewState.loaded(empty: true))
-        XCTAssertNotEqual(ViewState.loaded(empty: true), ViewState.loaded(empty: false))
-        XCTAssertEqual(ViewState.loaded(empty: true), ViewState.loaded(empty: true))
-        XCTAssertEqual(ViewState.loaded(empty: false), ViewState.loaded(empty: false))
+        let state1 = ViewState.loaded
+        let state2 = ViewState.loaded
+        XCTAssertEqual(state1, state2)
+    }
+    
+    func testEmptyComparison() {
+        let state1 = ViewState.empty
+        let state2 = ViewState.empty
+        XCTAssertEqual(state1, state2)
     }
     
     func testErrorComparison() {

@@ -23,8 +23,6 @@
 		4BD1B2362AA25121003432B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1B2342AA25121003432B3 /* Main.storyboard */; };
 		4BD1B2382AA25122003432B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1B2372AA25122003432B3 /* Assets.xcassets */; };
 		4BD1B23B2AA25122003432B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1B2392AA25122003432B3 /* LaunchScreen.storyboard */; };
-		4BD1B2502AA25122003432B3 /* htv_cat_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B24F2AA25122003432B3 /* htv_cat_iosUITests.swift */; };
-		4BD1B2522AA25122003432B3 /* htv_cat_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2512AA25122003432B3 /* htv_cat_iosUITestsLaunchTests.swift */; };
 		4BD1B2622AA254A9003432B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2612AA254A9003432B3 /* HomeViewController.swift */; };
 		4BD1B2652AA25585003432B3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2642AA25585003432B3 /* Coordinator.swift */; };
 		4BD1B2672AA25598003432B3 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1B2662AA25598003432B3 /* MainCoordinator.swift */; };
@@ -83,17 +81,18 @@
 		4BEE40C72AA5047E00F255B1 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE40C62AA5047E00F255B1 /* MockURLProtocol.swift */; };
 		4BEE40C92AA50B9300F255B1 /* ViewStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE40C82AA50B9300F255B1 /* ViewStateTests.swift */; };
 		4BEE40CB2AA50E7800F255B1 /* ImageSearchEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE40CA2AA50E7800F255B1 /* ImageSearchEndpointTests.swift */; };
+		4BEE40CD2AA63AE800F255B1 /* BreedCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE40CC2AA63AE800F255B1 /* BreedCoordinatorTests.swift */; };
+		4BEE40CF2AA63EBF00F255B1 /* FactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE40CE2AA63EBF00F255B1 /* FactoryMock.swift */; };
+		4BEE40D12AA63F0C00F255B1 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE40D02AA63F0C00F255B1 /* HomeFactory.swift */; };
+		4BEE40D32AA63F2200F255B1 /* DetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE40D22AA63F2200F255B1 /* DetailFactory.swift */; };
+		4BEE40D52AA643DC00F255B1 /* MainCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE40D42AA643DC00F255B1 /* MainCoordinatorTests.swift */; };
+		4BEE40D72AA648CD00F255B1 /* HomeFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE40D62AA648CD00F255B1 /* HomeFactoryTests.swift */; };
+		4BEE40D92AA6495900F255B1 /* IndependantStartableCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE40D82AA6495900F255B1 /* IndependantStartableCoordinatorMock.swift */; };
+		4BEE40DB2AA64A2B00F255B1 /* DetailFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEE40DA2AA64A2B00F255B1 /* DetailFactoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		4BD1B2422AA25122003432B3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4BD1B2232AA25121003432B3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4BD1B22A2AA25121003432B3;
-			remoteInfo = "htv-cat-ios";
-		};
-		4BD1B24C2AA25122003432B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4BD1B2232AA25121003432B3 /* Project object */;
 			proxyType = 1;
@@ -122,9 +121,6 @@
 		4BD1B23A2AA25122003432B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BD1B23C2AA25122003432B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BD1B2412AA25122003432B3 /* htv-cat-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "htv-cat-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BD1B24B2AA25122003432B3 /* htv-cat-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "htv-cat-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BD1B24F2AA25122003432B3 /* htv_cat_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = htv_cat_iosUITests.swift; sourceTree = "<group>"; };
-		4BD1B2512AA25122003432B3 /* htv_cat_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = htv_cat_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4BD1B2612AA254A9003432B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4BD1B2642AA25585003432B3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4BD1B2662AA25598003432B3 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -182,6 +178,14 @@
 		4BEE40C62AA5047E00F255B1 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		4BEE40C82AA50B9300F255B1 /* ViewStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateTests.swift; sourceTree = "<group>"; };
 		4BEE40CA2AA50E7800F255B1 /* ImageSearchEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchEndpointTests.swift; sourceTree = "<group>"; };
+		4BEE40CC2AA63AE800F255B1 /* BreedCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCoordinatorTests.swift; sourceTree = "<group>"; };
+		4BEE40CE2AA63EBF00F255B1 /* FactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryMock.swift; sourceTree = "<group>"; };
+		4BEE40D02AA63F0C00F255B1 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
+		4BEE40D22AA63F2200F255B1 /* DetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFactory.swift; sourceTree = "<group>"; };
+		4BEE40D42AA643DC00F255B1 /* MainCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorTests.swift; sourceTree = "<group>"; };
+		4BEE40D62AA648CD00F255B1 /* HomeFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactoryTests.swift; sourceTree = "<group>"; };
+		4BEE40D82AA6495900F255B1 /* IndependantStartableCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependantStartableCoordinatorMock.swift; sourceTree = "<group>"; };
+		4BEE40DA2AA64A2B00F255B1 /* DetailFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFactoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,13 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BDF8D9C2AA4D45B008790FA /* SnapshotTesting in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4BD1B2482AA25122003432B3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +229,7 @@
 				4B6AFD572AA4ED2300A8F694 /* DetailHorizontalCellTests.swift */,
 				4B6AFD5C2AA4F42C00A8F694 /* DetailHeaderImageCellTests.swift */,
 				4B6AFD5E2AA4F68400A8F694 /* DetailViewControllerTests.swift */,
+				4BEE40DA2AA64A2B00F255B1 /* DetailFactoryTests.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -250,7 +248,6 @@
 				4BD1B2D62AA49B4D003432B3 /* unit-tests-with-code-coverage.xctestplan */,
 				4BD1B22D2AA25121003432B3 /* htv-cat-ios */,
 				4BD1B2442AA25122003432B3 /* htv-cat-iosTests */,
-				4BD1B24E2AA25122003432B3 /* htv-cat-iosUITests */,
 				4BD1B22C2AA25121003432B3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -260,7 +257,6 @@
 			children = (
 				4BD1B22B2AA25121003432B3 /* htv-cat-ios.app */,
 				4BD1B2412AA25122003432B3 /* htv-cat-iosTests.xctest */,
-				4BD1B24B2AA25122003432B3 /* htv-cat-iosUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -289,15 +285,6 @@
 				4B6AFD592AA4EE2E00A8F694 /* Utils */,
 			);
 			path = "htv-cat-iosTests";
-			sourceTree = "<group>";
-		};
-		4BD1B24E2AA25122003432B3 /* htv-cat-iosUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4BD1B24F2AA25122003432B3 /* htv_cat_iosUITests.swift */,
-				4BD1B2512AA25122003432B3 /* htv_cat_iosUITestsLaunchTests.swift */,
-			);
-			path = "htv-cat-iosUITests";
 			sourceTree = "<group>";
 		};
 		4BD1B25E2AA25404003432B3 /* SupportingFiles */ = {
@@ -355,6 +342,7 @@
 				4BDF8D932AA4C800008790FA /* Cells */,
 				4BD1B2612AA254A9003432B3 /* HomeViewController.swift */,
 				4BD1B26D2AA258B6003432B3 /* HomeViewModel.swift */,
+				4BEE40D02AA63F0C00F255B1 /* HomeFactory.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -436,6 +424,7 @@
 				4BD1B2A42AA3818A003432B3 /* Cells */,
 				4BD1B29A2AA32ADC003432B3 /* DetailViewController.swift */,
 				4BD1B29C2AA32AF3003432B3 /* DetailViewModel.swift */,
+				4BEE40D22AA63F2200F255B1 /* DetailFactory.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -503,6 +492,7 @@
 				4BDF8D8F2AA4C4C1008790FA /* BreedListSectionTests.swift */,
 				4BDF8D982AA4CC52008790FA /* BreedCellViewModelTests.swift */,
 				4BDF8D9D2AA4D48B008790FA /* HomeViewControllerTests.swift */,
+				4BEE40D62AA648CD00F255B1 /* HomeFactoryTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -515,6 +505,8 @@
 				4BEE40C02AA4FD4E00F255B1 /* HTTPClientMock.swift */,
 				4BEE40C62AA5047E00F255B1 /* MockURLProtocol.swift */,
 				4BD1B2CC2AA48CB7003432B3 /* MockHelper.swift */,
+				4BEE40CE2AA63EBF00F255B1 /* FactoryMock.swift */,
+				4BEE40D82AA6495900F255B1 /* IndependantStartableCoordinatorMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -557,6 +549,8 @@
 				4BEE40C22AA5009C00F255B1 /* CollectionViewAdapterTests.swift */,
 				4BEE40C42AA503F600F255B1 /* HTTPClientTests.swift */,
 				4BEE40C82AA50B9300F255B1 /* ViewStateTests.swift */,
+				4BEE40CC2AA63AE800F255B1 /* BreedCoordinatorTests.swift */,
+				4BEE40D42AA643DC00F255B1 /* MainCoordinatorTests.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -606,24 +600,6 @@
 			productReference = 4BD1B2412AA25122003432B3 /* htv-cat-iosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4BD1B24A2AA25122003432B3 /* htv-cat-iosUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4BD1B25B2AA25122003432B3 /* Build configuration list for PBXNativeTarget "htv-cat-iosUITests" */;
-			buildPhases = (
-				4BD1B2472AA25122003432B3 /* Sources */,
-				4BD1B2482AA25122003432B3 /* Frameworks */,
-				4BD1B2492AA25122003432B3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4BD1B24D2AA25122003432B3 /* PBXTargetDependency */,
-			);
-			name = "htv-cat-iosUITests";
-			productName = "htv-cat-iosUITests";
-			productReference = 4BD1B24B2AA25122003432B3 /* htv-cat-iosUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -638,10 +614,6 @@
 						CreatedOnToolsVersion = 14.3.1;
 					};
 					4BD1B2402AA25122003432B3 = {
-						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = 4BD1B22A2AA25121003432B3;
-					};
-					4BD1B24A2AA25122003432B3 = {
 						CreatedOnToolsVersion = 14.3.1;
 						TestTargetID = 4BD1B22A2AA25121003432B3;
 					};
@@ -667,7 +639,6 @@
 			targets = (
 				4BD1B22A2AA25121003432B3 /* htv-cat-ios */,
 				4BD1B2402AA25122003432B3 /* htv-cat-iosTests */,
-				4BD1B24A2AA25122003432B3 /* htv-cat-iosUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -694,13 +665,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4BD1B2492AA25122003432B3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -715,6 +679,7 @@
 				4BD1B2B92AA3C8AE003432B3 /* DetailHorizontalCell.swift in Sources */,
 				4BD1B2842AA28812003432B3 /* BreedCell.swift in Sources */,
 				4BDF8D922AA4C559008790FA /* SnakeCaseJSONDecoder.swift in Sources */,
+				4BEE40D32AA63F2200F255B1 /* DetailFactory.swift in Sources */,
 				4BD1B22F2AA25121003432B3 /* AppDelegate.swift in Sources */,
 				4B6AFD4B2AA4D8FD00A8F694 /* StateView.swift in Sources */,
 				4BD1B2652AA25585003432B3 /* Coordinator.swift in Sources */,
@@ -731,6 +696,7 @@
 				4BD1B29D2AA32AF3003432B3 /* DetailViewModel.swift in Sources */,
 				4BD1B28E2AA309D8003432B3 /* ListSection.swift in Sources */,
 				4BD1B2AC2AA3935B003432B3 /* DetailHeaderImageCellViewModel.swift in Sources */,
+				4BEE40D12AA63F0C00F255B1 /* HomeFactory.swift in Sources */,
 				4BD1B2BB2AA3D964003432B3 /* DetailHorizontalCellViewModel.swift in Sources */,
 				4BD1B28C2AA30976003432B3 /* CollectionViewAdapter.swift in Sources */,
 				4BD1B29B2AA32ADC003432B3 /* DetailViewController.swift in Sources */,
@@ -762,7 +728,9 @@
 				4BDF8D902AA4C4C1008790FA /* BreedListSectionTests.swift in Sources */,
 				4B6AFD542AA4EA4400A8F694 /* DetailHorizontalCellViewModelTests.swift in Sources */,
 				4BEE40C32AA5009C00F255B1 /* CollectionViewAdapterTests.swift in Sources */,
+				4BEE40D72AA648CD00F255B1 /* HomeFactoryTests.swift in Sources */,
 				4BDF8D9E2AA4D48B008790FA /* HomeViewControllerTests.swift in Sources */,
+				4BEE40D52AA643DC00F255B1 /* MainCoordinatorTests.swift in Sources */,
 				4B6AFD522AA4E93200A8F694 /* DetailBodySectionTests.swift in Sources */,
 				4B6AFD562AA4EC4400A8F694 /* DetailHeaderImageCellViewModelTests.swift in Sources */,
 				4BEE40CB2AA50E7800F255B1 /* ImageSearchEndpointTests.swift in Sources */,
@@ -771,23 +739,18 @@
 				4BEE40C12AA4FD4E00F255B1 /* HTTPClientMock.swift in Sources */,
 				4BEE40C52AA503F600F255B1 /* HTTPClientTests.swift in Sources */,
 				4B6AFD4E2AA4E33E00A8F694 /* DetailViewModelTests.swift in Sources */,
+				4BEE40DB2AA64A2B00F255B1 /* DetailFactoryTests.swift in Sources */,
+				4BEE40CD2AA63AE800F255B1 /* BreedCoordinatorTests.swift in Sources */,
+				4BEE40D92AA6495900F255B1 /* IndependantStartableCoordinatorMock.swift in Sources */,
 				4BD1B2CD2AA48CB7003432B3 /* MockHelper.swift in Sources */,
 				4BEE40BD2AA4FBF800F255B1 /* BreedListEndpointTests.swift in Sources */,
 				4B6AFD502AA4E82500A8F694 /* DetailHeaderSectionTests.swift in Sources */,
+				4BEE40CF2AA63EBF00F255B1 /* FactoryMock.swift in Sources */,
 				4BD1B2C62AA480CE003432B3 /* BreedRepositoryMock.swift in Sources */,
 				4B6AFD5F2AA4F68400A8F694 /* DetailViewControllerTests.swift in Sources */,
 				4B6AFD582AA4ED2300A8F694 /* DetailHorizontalCellTests.swift in Sources */,
 				4BD1B2C32AA4809B003432B3 /* HomeViewModelTests.swift in Sources */,
 				4B6AFD5B2AA4EE4000A8F694 /* CollectionViewCellSnapshotContainer.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4BD1B2472AA25122003432B3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4BD1B2522AA25122003432B3 /* htv_cat_iosUITestsLaunchTests.swift in Sources */,
-				4BD1B2502AA25122003432B3 /* htv_cat_iosUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,11 +761,6 @@
 			isa = PBXTargetDependency;
 			target = 4BD1B22A2AA25121003432B3 /* htv-cat-ios */;
 			targetProxy = 4BD1B2422AA25122003432B3 /* PBXContainerItemProxy */;
-		};
-		4BD1B24D2AA25122003432B3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4BD1B22A2AA25121003432B3 /* htv-cat-ios */;
-			targetProxy = 4BD1B24C2AA25122003432B3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1054,44 +1012,6 @@
 			};
 			name = Release;
 		};
-		4BD1B25C2AA25122003432B3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BDF8D942AA4C86A008790FA /* Production.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W8W67XPP2J;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phlourenco.htv-cat-iosUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "htv-cat-ios";
-			};
-			name = Debug;
-		};
-		4BD1B25D2AA25122003432B3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BDF8D942AA4C86A008790FA /* Production.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = W8W67XPP2J;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.phlourenco.htv-cat-iosUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "htv-cat-ios";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1118,15 +1038,6 @@
 			buildConfigurations = (
 				4BD1B2592AA25122003432B3 /* Debug */,
 				4BD1B25A2AA25122003432B3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4BD1B25B2AA25122003432B3 /* Build configuration list for PBXNativeTarget "htv-cat-iosUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4BD1B25C2AA25122003432B3 /* Debug */,
-				4BD1B25D2AA25122003432B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
