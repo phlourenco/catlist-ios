@@ -26,12 +26,14 @@ final class BreedCoordinator: IndependantStartableCoordinator, BreedCoordinatorD
     
     func start(with navigationController: UINavigationController) {
         self.navigationController = navigationController
-        let homeController = try! homeFactory.make(parameters: [], coordinatorDelegate: self)
-        navigationController.viewControllers = [homeController]
+        if let homeController = try? homeFactory.make(parameters: [], coordinatorDelegate: self) {
+            navigationController.viewControllers = [homeController]
+        }
     }
     
     func showDetail(breed: BreedModel) {
-        let detailController = try! detailFactory.make(parameters: [breed], coordinatorDelegate: nil)
-        navigationController.pushViewController(detailController, animated: true)
+        if let detailController = try? detailFactory.make(parameters: [breed], coordinatorDelegate: nil) {
+            navigationController.pushViewController(detailController, animated: true)
+        }
     }
 }
